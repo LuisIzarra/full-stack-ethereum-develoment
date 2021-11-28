@@ -4,21 +4,21 @@ require("@nomiclabs/hardhat-web3");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async () => {
-  const accounts = await ethers.getSigners();
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
+// task("accounts", "Prints the list of accounts", async () => {
+//   const accounts = await ethers.getSigners();
+//   for (const account of accounts) {
+//     console.log(account.address);
+//   }
+// });
 
-task("balance", "Prints an account's balance")
-  .addParam("account", "The account's address")
-  .setAction(async (taskArgs) => {
-    const account = web3.utils.toChecksumAddress(taskArgs.account);
-    const balance = await web3.eth.getBalance(account);
+// task("balance", "Prints an account's balance")
+//   .addParam("account", "The account's address")
+//   .setAction(async (taskArgs) => {
+//     const account = web3.utils.toChecksumAddress(taskArgs.account);
+//     const balance = await web3.eth.getBalance(account);
 
-    console.log(web3.utils.fromWei(balance, "ether"), "ETH");
-  });
+//     console.log(web3.utils.fromWei(balance, "ether"), "ETH");
+//   });
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -33,12 +33,12 @@ module.exports = {
   },
   networks: {
     hardhat: {
-      chainId: 1337,
+      chainId: 31337,
     },
-    ropsten: {
-      url: "https://ropsten.infura.io/v3/68728b9fd119467ca074b09b3f1efa3a",
-      accounts: [process.env.ROPSTEN_URL],
-    },
+    // ropsten: {
+    //   url: `${process.env.ROPSTEN_URL}`,
+    //   accounts: [`${process.env.ROPSTEN_PRIVATE_KEY}`],
+    // },
     // rinkeby: {
     //   url: "https://rinkeby.infura.io/v3/projectid",
     //   accounts: [process.env.a2key]

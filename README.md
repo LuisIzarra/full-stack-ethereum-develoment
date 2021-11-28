@@ -31,12 +31,12 @@ ROPSTEN_URL=...
 ROPSTEN_PRIVATE_KEY=...
 npx hardhat run scripts/deploy.js --network localhost
 ```
-**Replace points in a row, with personal data*
+**Replace points in a row, with personal data of your test network*
 
 5. Update src/App.js with the values of your contract addresses (greeterAddress and tokenAddress)
 
 6. Run the app
 
 ```sh
-npm start
+npm run start
 ```
